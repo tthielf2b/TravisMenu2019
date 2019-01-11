@@ -1,0 +1,15 @@
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\MainWindow.g.cs
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\App.g.cs
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019_MarkupCompile.cache
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019_MarkupCompile.lref
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\bin\Debug\TravisMenu2019.exe.config
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\bin\Debug\TravisMenu2019.exe
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\bin\Debug\TravisMenu2019.pdb
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\MainWindow.baml
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.g.resources
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.Properties.Resources.resources
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.csproj.GenerateResource.cache
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.csproj.CoreCompileInputs.cache
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.exe
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.pdb
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.csprojAssemblyReference.cache
