@@ -79,6 +79,7 @@
                 </RadialGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-
+        <Label x:Name="Option1" Content="Cats" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,10,0,0" Grid.Row="1" FontFamily="Comic Sans MS"/>
+        <Label x:Name="Option2" Content="Dogs" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,10,0,0" Grid.Row="2" FontFamily="Comic Sans MS"/>
     </Grid>
 </Window>
