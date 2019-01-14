@@ -11,7 +11,8 @@
             <RowDefinition Height="45*"/>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="50*"/>
-            <RowDefinition Height="402*"/>
+            <RowDefinition Height="94*"/>
+            <RowDefinition Height="308*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
             <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -24,13 +25,24 @@
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="421*"/>
         </Grid.ColumnDefinitions>
-        <Viewbox Grid.Column="2" HorizontalAlignment="Left" Height="316" Margin="10,10,0,0" VerticalAlignment="Top" Width="397" Grid.RowSpan="4"/>
+        <Viewbox x:Name="ImageBox" 
+                 Grid.Column="2" 
+                 HorizontalAlignment="Left" 
+                 Height="224" 
+                 Margin="10,10,0,0" 
+                 VerticalAlignment="Top" 
+                 Width="397" 
+                 Grid.RowSpan="4">
+            <!--Grid x:Name="Photos1" Height="10" -->
+            <Image x:Name="I1" Source="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\space2.jpg"/>
+            <!--/Grid-->
+        </Viewbox>
         <Label x:Name="label" Content="Menu" Grid.Column="1" Margin="9,10,10,0" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="#FFF90606" Height="24">
             <Label.Background>
                 <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Documents\PBRE Beta\PBSamplePic\notcat.jpg" Stretch="UniformToFill"/>
             </Label.Background>
         </Label>
-        <Rectangle x:Name="quitButton" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Top" Grid.Column="1" Margin="50,283,50,0" AllowDrop="False" MouseLeftButtonUp="QuitButton_Click" TouchUp ="QuitButton_Click" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave" Grid.Row="3">
+        <Rectangle x:Name="quitButton" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Top" Grid.Column="1" Margin="50,195,50,0" AllowDrop="False" MouseLeftButtonUp="QuitButton_Click" TouchUp ="QuitButton_Click" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave" Grid.Row="4">
             <Rectangle.Fill>
                 <RadialGradientBrush GradientOrigin="5,0.5">
                     <RadialGradientBrush.RelativeTransform>
@@ -46,7 +58,7 @@
                 </RadialGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="Quit" Content="Quit" Grid.Column="1" Margin="82,283,82,0" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Top" Grid.Row="3" IsHitTestVisible="False"/>
+        <Label x:Name="Quit" Content="Quit" Grid.Column="1" Margin="82,195,82,0" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Top" Grid.Row="4" IsHitTestVisible="False"/>
         <Rectangle x:Name="B1" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Top" Grid.Column="1" Margin="50,10,50,0" AllowDrop="False" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave" Grid.Row="1">
             <Rectangle.Fill>
                 <RadialGradientBrush GradientOrigin="5,0.5">
@@ -79,7 +91,7 @@
                 </RadialGradientBrush>
             </Rectangle.Fill>
         </Rectangle>
-        <Label x:Name="Option1" Content="Cats" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,10,0,0" Grid.Row="1" FontFamily="Comic Sans MS"/>
-        <Label x:Name="Option2" Content="Dogs" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,10,0,0" Grid.Row="2" FontFamily="Comic Sans MS"/>
+        <Label x:Name="Option1" Content="Cats" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,10,0,0" Grid.Row="1" FontFamily="Comic Sans MS" Height="27"/>
+        <Label x:Name="Option2" Content="Dogs" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,10,0,0" Grid.Row="2" FontFamily="Comic Sans MS" Height="27"/>
     </Grid>
 </Window>

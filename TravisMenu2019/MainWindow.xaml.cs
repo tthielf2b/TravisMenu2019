@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -48,6 +49,14 @@ namespace TravisMenu2019
 
         private void Button_Enter(object sender, MouseEventArgs e)
         {
+            if (B1.IsMouseDirectlyOver || B1.AreAnyTouchesDirectlyOver)
+            {
+                I1.Source = new BitmapImage(new Uri("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Cats\\cat1.jpg"));
+            }
+            else if (B2.IsMouseDirectlyOver || B2.AreAnyTouchesDirectlyOver)
+            {
+                I1.Source = new BitmapImage(new Uri("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Dogs\\dog1.jpg"));
+            }
             Rectangle r = sender as Rectangle;
             r.SetValue(Rectangle.MarginProperty, new Thickness(r.Margin.Left-2.5, r.Margin.Top-2.5, r.Margin.Right, r.Margin.Bottom) );
             r.Width += 5.0;
@@ -64,6 +73,13 @@ namespace TravisMenu2019
 
         private void Button_Enter(object sender, TouchEventArgs e)
         {
+            if (B1.IsMouseDirectlyOver||B1.AreAnyTouchesDirectlyOver)
+            {
+                I1.Source = new BitmapImage(new Uri("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Cats\\cat1.jpg"));
+            }else if(B2.IsMouseDirectlyOver || B2.AreAnyTouchesDirectlyOver)
+            {
+                I1.Source = new BitmapImage(new Uri("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Dogs\\dog1.jpg"));
+            }
             Rectangle r = sender as Rectangle;
             r.SetValue(Rectangle.MarginProperty, new Thickness(r.Margin.Left - 2.5, r.Margin.Top - 2.5, r.Margin.Right, r.Margin.Bottom));
             r.Width += 5.0;
@@ -76,6 +92,13 @@ namespace TravisMenu2019
             r.SetValue(Rectangle.MarginProperty, new Thickness(r.Margin.Left + 2.5, r.Margin.Top + 2.5, r.Margin.Right, r.Margin.Bottom));
             r.Width -= 5.0;
             r.Height -= 5.0;
+        }
+
+        private void CatButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            String[] cats = Directory.GetFiles("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Cats", "*", SearchOption.AllDirectories);
+
+            I1.Opacity = 0.0;
         }
     }
 }
