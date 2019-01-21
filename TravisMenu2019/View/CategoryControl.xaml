@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="TravisMenu2019.View.CatagoryControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:TravisMenu2019.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid x:Name="CatagoryRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="CatagoryName" Content="Cats" Foreground="Red" Panel.ZIndex="1"  VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" Height="50" IsHitTestVisible="False" HorizontalAlignment="Center" Width="100" FontSize="35"/>
+
+        <Rectangle x:Name="CatagoryButton" 
+                   RadiusY="13" 
+                   RadiusX="14" 
+                   Stroke="Black" 
+                   Grid.Column="0" 
+                   Grid.Row="0"
+                   Grid.ColumnSpan="2"
+                   Margin="50,10,50,10" 
+                   AllowDrop="False" 
+                   MouseEnter="Button_Enter" 
+                   MouseLeave="Button_Leave" 
+                   TouchEnter="Button_Enter" 
+                   TouchLeave="Button_Leave" 
+                   MouseLeftButtonUp="CatButton_Click">
+            <Rectangle.Fill>
+                <ImageBrush Stretch="UniformToFill" ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\4.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+    </Grid>
+
+
+
+</UserControl>

@@ -13,3 +13,5 @@ C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Deb
 C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.exe
 C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.pdb
 C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\TravisMenu2019.csprojAssemblyReference.cache
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\View\UserControl1.g.cs
+C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\obj\Debug\View\UserControl1.baml

@@ -96,9 +96,63 @@ namespace TravisMenu2019
 
         private void CatButton_Click(object sender, MouseButtonEventArgs e)
         {
-            String[] cats = Directory.GetFiles("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Cats", "*", SearchOption.AllDirectories);
-
-            I1.Opacity = 0.0;
+            Thumbnails.Items.Clear();
+            DirectoryInfo catFolder = new DirectoryInfo("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Cats");
+            FileInfo[] cats = catFolder.GetFiles("*");
+            foreach(FileInfo cat in cats)
+            {
+                Thumbnails.Items.Add(cat.FullName);
+            }
+            
         }
+
+        private void CatButton_Click(object sender, TouchEventArgs e)
+        {
+            Thumbnails.Items.Clear();
+            DirectoryInfo catFolder = new DirectoryInfo("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Cats");
+            FileInfo[] cats = catFolder.GetFiles("*");
+            foreach (FileInfo cat in cats)
+            {
+                Thumbnails.Items.Add(cat.FullName);
+            }
+
+        }
+
+        private void DogButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            Thumbnails.Items.Clear();
+            DirectoryInfo dogFolder = new DirectoryInfo("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Dogs");
+            FileInfo[] dogs = dogFolder.GetFiles("*");
+            foreach (FileInfo dog in dogs)
+            {
+                Thumbnails.Items.Add(dog.FullName);
+            }
+
+        }
+
+        private void DogButton_Click(object sender, TouchEventArgs e)
+        {
+            Thumbnails.Items.Clear();
+            DirectoryInfo dogFolder = new DirectoryInfo("C:\\Users\\hp-800_G2-011\\Desktop\\TJ Projects\\TravisMenu2019\\TravisMenu2019\\Util\\Dogs");
+            FileInfo[] dogs = dogFolder.GetFiles("*");
+            foreach (FileInfo dog in dogs)
+            {
+                Thumbnails.Items.Add(dog.FullName);
+            }
+
+        }
+
+        private void Image_Click(object sender, MouseButtonEventArgs e)
+        {
+            Image i = sender as Image;
+            I1.Source = i.Source;
+        }
+
+        private void Image_Click(object sender, TouchEventArgs e)
+        {
+            Image i = sender as Image;
+            I1.Source = i.Source;
+        }
+
     }
 }
