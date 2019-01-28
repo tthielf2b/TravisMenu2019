@@ -4,22 +4,69 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TravisMenu2019"
+        xmlns:View="clr-namespace:TravisMenu2019.View"
+        KeyDown="Window_KeyDown"
         mc:Ignorable="d"
         Title="MainWindow" Height="577.5" Width="622.5" SnapsToDevicePixels="True">
-    <Grid>
+    <Grid DataContext="{Binding Source={StaticResource Locator}}">
         <Grid.RowDefinitions>
             <RowDefinition Height="45*"/>
-            <RowDefinition Height="194*"/>
-            <RowDefinition Height="308*"/>
+            <RowDefinition Height="197*"/>
+            <RowDefinition Height="218*"/>
+            <RowDefinition Height="87*"/>
         </Grid.RowDefinitions>
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\MenuBackground00.jpg" Stretch="UniformToFill"/>
+            <!--<ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\MenuBackground00.jpg" Stretch="UniformToFill"/>-->
+            <ImageBrush ImageSource="{Binding Source={StaticResource Locator}, Path=Main.Mw.BackGround}"  Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="auto"/>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="421*"/>
         </Grid.ColumnDefinitions>
+
+        <Grid x:Name="editgrid" Grid.Row="1" Grid.Column="0" Grid.RowSpan="2" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+            <Label x:Name="CatNameEdit" Content="Category Name: " Grid.Row="0" Grid.Column="0" Margin="9,10,10,0" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="#FFF90606" Height="24"></Label>
+
+            <TextBox x:Name="CategoryName" Width="120" Grid.Row="1" Height="20" Text="{Binding Source={StaticResource Locator},Path=Main.Mw.SelectedCat.CatName, UpdateSourceTrigger=LostFocus, Mode=TwoWay}"></TextBox>
+
+
+            <Label x:Name="CatNameDir" Content="Category Directory: " Grid.Row="2" Grid.Column="0" Margin="9,10,10,0" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="#FFF90606" Height="24"></Label>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=" 2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="CategoryDir" Grid.Column="0" Height="20" Width="120" Text="{Binding Main.Mw.SelectedCat.Dir,UpdateSourceTrigger=LostFocus, Mode=TwoWay}" SpellCheck.IsEnabled="True"></TextBox>
+                <Button Grid.Column="1" Click="DirButton_Click">Browse</Button>
+
+            </Grid>
+            <Label x:Name="SubCatNameEdit" Content="Sub-Category Name: " Grid.Row="4" Grid.Column="0" Margin="9,10,10,0" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="#FFF90606" Height="24"></Label>
+            <TextBox x:Name="SubCategoryName" Width="120" Grid.Row="5" Height="20" Text="{Binding Source={StaticResource Locator},Path=Main.Mw.SelectedCat.SelectedSubCat.SubCatName,UpdateSourceTrigger=LostFocus, Mode=TwoWay}"></TextBox>
+
+            <Label x:Name="SubCatNameDir" Content="Sub-Category Directory: " Grid.Row="6" Grid.Column="0" Margin="9,10,10,0" VerticalAlignment="Top" Grid.IsSharedSizeScope="True" HorizontalContentAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="#FFF90606" Height="24"></Label>
+            <Grid Grid.Row="7">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=" 2*"/>
+                    <ColumnDefinition Width="1*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox x:Name="SubCategoryDir" Width="120" Grid.Column="0" Height="20" Text="{Binding Source={StaticResource Locator},Path=Main.Mw.SelectedCat.SelectedSubCat.SubDir,UpdateSourceTrigger=LostFocus, Mode=TwoWay}"></TextBox>
+                <Button Grid.Column="1" Click="SubDirButton_Click">Browse</Button>
+
+            </Grid>
+            
+        </Grid>
         <Viewbox x:Name="ImageBox" 
                  Grid.Column="2" 
                  HorizontalAlignment="Left" 
@@ -37,25 +84,65 @@
                 <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\3.jpg" Stretch="UniformToFill"/>
             </Label.Background>
         </Label>
-        <Rectangle x:Name="quitButton" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Top" Grid.Column="1" Margin="50,268,50,0" AllowDrop="False" MouseLeftButtonUp="QuitButton_Click" TouchUp ="QuitButton_Click" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave" Grid.Row="2">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\5.jpg" Stretch="UniformToFill"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Label x:Name="Quit" Content="Quit" Grid.Column="1" Margin="82,268,82,0" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Top" Grid.Row="2" IsHitTestVisible="False"/>
-        <Rectangle x:Name="B1" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Top" Grid.Column="1" Margin="50,10,50,0" AllowDrop="False" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave" MouseLeftButtonUp="CatButton_Click" TouchUp="CatButton_Click" Grid.Row="1">
-            <Rectangle.Fill>
-                <ImageBrush Stretch="UniformToFill" ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\4.jpg"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Rectangle x:Name="B2" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Top" Grid.Column="1" Margin="50,60,50,0" AllowDrop="False" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave" MouseLeftButtonUp="DogButton_Click" TouchUp="DogButton_Click" Grid.Row="1">
-            <Rectangle.Fill>
-                <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\4.jpg" Stretch="UniformToFill"/>
-            </Rectangle.Fill>
-        </Rectangle>
-        <Label x:Name="Option1" Content="Cats" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,10,0,0" Grid.Row="1" FontFamily="Comic Sans MS" Height="27" IsHitTestVisible="False"/>
-        <Label x:Name="Option2" Content="Dogs" HorizontalAlignment="Left" Foreground="Red" VerticalAlignment="Top" Width="36" Grid.Column="1" Margin="82,60,0,0" Grid.Row="1" FontFamily="Comic Sans MS" Height="27" IsHitTestVisible="False"/>
-        <ListView x:Name="Thumbnails" Grid.Column="2" Background="Transparent" HorizontalAlignment="Left" Height="288" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="393">
+
+
+
+        <Grid Grid.Column="1" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Viewbox Panel.ZIndex="1" Grid.Column="0">
+                    <Label x:Name="AddCat" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Content="ADD Category" HorizontalAlignment="Center" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Center" IsHitTestVisible="False" Panel.ZIndex="1"/>
+                </Viewbox>
+
+                <Rectangle x:Name="Add" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Center" Grid.Column="0" AllowDrop="False" MouseLeftButtonUp="Add_MouseLeftButtonUp" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\5.jpg" Stretch="UniformToFill"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+
+                <Viewbox Panel.ZIndex="1" Grid.Column="1">
+                    <Label x:Name="AddSubCat" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Content="ADD Sub-Category" HorizontalAlignment="Center" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Center" IsHitTestVisible="False" Panel.ZIndex="1"/>
+                </Viewbox>
+
+                <Rectangle x:Name="AddSub" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Center" Grid.Column="1" AllowDrop="False" MouseLeftButtonUp="AddSub_MouseLeftButtonUp" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave">
+                    <Rectangle.Fill>
+                        <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\5.jpg" Stretch="UniformToFill"/>
+                    </Rectangle.Fill>
+                </Rectangle>
+
+            </Grid>
+
+
+            <Rectangle x:Name="quitButton" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Center" Grid.Row="1" Margin="50,5,50,0" AllowDrop="False" MouseLeftButtonUp="QuitButton_Click" TouchUp ="QuitButton_Click" MouseEnter="Button_Enter" MouseLeave="Button_Leave" TouchEnter="Button_Enter" TouchLeave="Button_Leave" >
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\5.jpg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <Label x:Name="Quit" Content="Quit"  Margin="82,5,82,0" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Center" Grid.Row="1" IsHitTestVisible="False"/>
+
+        </Grid>
+
+        <ListView x:Name="CategoryPanel" SelectionChanged="CategoryPanel_SelectionChanged" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Grid.Column="1" Grid.Row="1" Background="Transparent" Grid.RowSpan="2" ItemsSource="{Binding Source={StaticResource Locator}, Path=Main.Mw.Categorys}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="1"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <View:CatagoryControl></View:CatagoryControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ListView x:Name="Thumbnails" Grid.Column="2" ItemsSource="{Binding Source={StaticResource Locator}, Path=Main.Mw.Thumbs, Mode=TwoWay}" Background="Transparent" HorizontalAlignment="Left" Height="288" Margin="10,10,0,0" Grid.Row="2" VerticalAlignment="Top" Width="393" Grid.RowSpan="2">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="3"/>
@@ -67,5 +154,37 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+        <Grid Grid.Column="0" Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Viewbox Panel.ZIndex="1" Grid.Column="0" Grid.Row="0">
+                <Label x:Name="Del" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Content="Delete" HorizontalAlignment="Center" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Center" IsHitTestVisible="False" Panel.ZIndex="1"/>
+            </Viewbox>
+
+            <Rectangle x:Name="Delete" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Center" Grid.Column="0" AllowDrop="False" MouseLeftButtonUp="Delete_MouseLeftButtonUp" MouseEnter="Button_Enter" MouseLeave="Button_Leave">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\5.jpg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+
+            <Viewbox Panel.ZIndex="1" Grid.Column="0" Grid.Row="1">
+                <Label x:Name="BG" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Content="Change BackGround" HorizontalAlignment="Center" Height="30" Foreground="Red" FontFamily="Comic Sans MS" VerticalAlignment="Center" IsHitTestVisible="False" Panel.ZIndex="1"/>
+            </Viewbox>
+
+            <Rectangle x:Name="BGChange" Visibility="{Binding Source={StaticResource Locator},Path=Main.Mw.IsEdit, Mode=TwoWay}" Height="30" RadiusY="13" RadiusX="14" Stroke="Black" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" AllowDrop="False" MouseLeftButtonUp="BGChange_MouseLeftButtonUp" MouseEnter="Button_Enter" MouseLeave="Button_Leave">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\5.jpg" Stretch="UniformToFill"/>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Grid>
+        
     </Grid>
 </Window>

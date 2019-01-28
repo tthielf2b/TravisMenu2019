@@ -35,8 +35,24 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonServiceLocator, Version=2.0.2.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\CommonServiceLocator.2.0.2\lib\net45\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight, Version=5.4.1.0, Culture=neutral, PublicKeyToken=e7570ab207bcb616, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Extras, Version=5.4.1.0, Culture=neutral, PublicKeyToken=669f0b5e8f868abf, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Extras.dll</HintPath>
+    </Reference>
+    <Reference Include="GalaSoft.MvvmLight.Platform, Version=5.4.1.0, Culture=neutral, PublicKeyToken=5f873c45e98af8a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\GalaSoft.MvvmLight.Platform.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\MvvmLightLibs.5.4.1.1\lib\net45\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,8 +71,16 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\CategoryControl.cs" />
+    <Compile Include="Model\MainWin.cs" />
+    <Compile Include="Model\SubCat.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ViewModelLocator.cs" />
     <Compile Include="View\CategoryControl.xaml.cs">
       <DependentUpon>CategoryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\SubCatControl.xaml.cs">
+      <DependentUpon>SubCatControl.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -71,6 +95,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\CategoryControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\SubCatControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -93,6 +121,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -105,8 +134,34 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="Viewmodel\" />
+    <Folder Include="Content\Pres1\Cats\Mane Coon\" />
+    <Folder Include="Content\Pres1\Dogs\German Shepard\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Pres1\Cats\cat1.jpg" />
+    <Resource Include="Content\Pres1\Cats\cat2.jpg" />
+    <Resource Include="Content\Pres1\Cats\cat3.gif" />
+    <Resource Include="Content\Pres1\Cats\cat3.jpeg" />
+    <Resource Include="Content\Pres1\Cats\cat4.jpg" />
+    <Resource Include="Content\Pres1\Cats\cat6.jpg" />
+    <Resource Include="Content\Pres1\Cats\cat7.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Pres1\Dogs\dog1.jpg" />
+    <Resource Include="Content\Pres1\Dogs\dog2.jpg" />
+    <Resource Include="Content\Pres1\Dogs\dog3.jpg" />
+    <Resource Include="Content\Pres1\Dogs\dog4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Content\Pres1\LookandFeel\1.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\2.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\3.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\4.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\5.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\6.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\Background00.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\MenuBackground00.jpg" />
+    <Resource Include="Content\Pres1\LookandFeel\MenuBackground01.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,8 +16,9 @@
             <ColumnDefinition Width="2*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Label x:Name="CatagoryName" Content="Cats" Foreground="Red" Panel.ZIndex="1"  VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2" FontFamily="Comic Sans MS" Height="50" IsHitTestVisible="False" HorizontalAlignment="Center" Width="100" FontSize="35"/>
-
+        <Viewbox Panel.ZIndex="1"  VerticalAlignment="Center" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2">
+            <Label x:Name="CatagoryName" Content="{Binding CatName}" Foreground="Red"  VerticalAlignment="Center" FontFamily="Comic Sans MS" Height="50" IsHitTestVisible="False" HorizontalAlignment="Center" />
+        </Viewbox>
         <Rectangle x:Name="CatagoryButton" 
                    RadiusY="13" 
                    RadiusX="14" 
@@ -25,17 +26,30 @@
                    Grid.Column="0" 
                    Grid.Row="0"
                    Grid.ColumnSpan="2"
-                   Margin="50,10,50,10" 
+                   
                    AllowDrop="False" 
                    MouseEnter="Button_Enter" 
                    MouseLeave="Button_Leave" 
                    TouchEnter="Button_Enter" 
                    TouchLeave="Button_Leave" 
-                   MouseLeftButtonUp="CatButton_Click">
+                   MouseLeftButtonUp="CatagoryButton_MouseLeftButtonUp">
             <Rectangle.Fill>
-                <ImageBrush Stretch="UniformToFill" ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\4.jpg"/>
+                <ImageBrush Stretch="UniformToFill" ImageSource="C:\Users\hp-800_G2-011\Desktop\TJ Projects\TravisMenu2019\TravisMenu2019\Util\LookandFeel\4.jpg"/><!-- Make customizable by adding a background prop to categorycontrol-->
             </Rectangle.Fill>
         </Rectangle>
+
+        <ListView x:Name="SubCategoryPanel" SelectionChanged="SubCategoryPanel_SelectionChanged" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" Background="Transparent" ItemsSource="{Binding SubCats}">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="1"/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <local:SubCatControl></local:SubCatControl>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 
 
